@@ -9,3 +9,5 @@ function somaNumeros(arr) {
 const arr = [1, 2];
 
 console.log(somaNumeros(arr));
+
+arr.reduce()
