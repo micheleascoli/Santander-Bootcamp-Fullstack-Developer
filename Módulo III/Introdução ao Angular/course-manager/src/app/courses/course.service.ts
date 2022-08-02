@@ -13,6 +13,18 @@ export class CourseService {
         return COURSES;
     }
 
+    retrieveById(id: number): Course {
+        return COURSES.find((courseItereator: Course) => courseItereator.id === id)!;
+        // exclamação no final. (Sei que diz que não será nulo, mas procure uma excplicação melhor)
+    }
+
+    save(course: Course): void {
+        if (course.id) {
+            const index = COURSES.findIndex((courseItereator: Course) => courseItereator.id === course.id); 
+            COURSES[index] = course;         
+        }
+    }
+
 }
 
 var COURSES: Course[] = [
